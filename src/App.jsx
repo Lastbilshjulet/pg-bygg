@@ -3,6 +3,7 @@ import {
 	RouterProvider
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import firebase from "./firebase";
 
 const router = createBrowserRouter(
 	[

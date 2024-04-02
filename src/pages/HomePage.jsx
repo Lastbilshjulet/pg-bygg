@@ -1,9 +1,9 @@
 
 function HomePage() {
-    return (
-        <div>
+	return (
+		<div>
             P&G Bygg
-        </div>
+		</div>
 	);
 }
 
