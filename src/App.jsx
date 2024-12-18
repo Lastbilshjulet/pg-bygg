@@ -3,7 +3,7 @@ import {
 	RouterProvider
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import firebase from "./firebase";
+import ContactPage from "./pages/ContactPage";
 
 const router = createBrowserRouter(
 	[
@@ -12,8 +12,8 @@ const router = createBrowserRouter(
 			element: <HomePage />
 		},
 		{
-			path: "/home",
-			element: <HomePage />
+			path: "/kontakta-oss",
+			element: <ContactPage />
 		}
 	]
 );

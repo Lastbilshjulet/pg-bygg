@@ -1,14 +1,14 @@
 import Header from "../components/Header";
 
-function HomePage() {
+function ContactPage() {
 	return (
 		<div className="bg-primary dark:bg-primary-dark h-screen">
 			<Header></Header>
 			<p className="text-secondary dark:text-secondary-dark pt-1 text-center">
-                Hej!
+                Kontakta oss!
 			</p>
 		</div>
 	);
 }
 
-export default HomePage;
+export default ContactPage;
