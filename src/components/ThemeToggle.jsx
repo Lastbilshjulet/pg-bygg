@@ -26,14 +26,12 @@ const ThemeToggle = () => {
 	};
 
 	return (
-		<div className="fixed top-14 right-10">
-			<button
-				onClick={toggleTheme}
-				className="text-secondary dark:text-secondary-dark"
-			>
-				<MdLightMode size={35}/>
-			</button>
-		</div>
+		<button
+			onClick={toggleTheme}
+			className="text-secondary dark:text-secondary-dark"
+		>
+			<MdLightMode size={35}/>
+		</button>
 	);
 };
 
