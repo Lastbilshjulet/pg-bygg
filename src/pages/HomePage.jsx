@@ -1,8 +1,9 @@
+import Header from "../components/Header";
 
 function HomePage() {
 	return (
-		<div>
-            P&G Bygg
+		<div className="bg-primary dark:bg-primary-dark h-screen">
+			<Header></Header>
 		</div>
 	);
 }
