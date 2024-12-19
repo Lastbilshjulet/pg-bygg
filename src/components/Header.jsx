@@ -7,7 +7,11 @@ function Header() {
 
 	return (
 		<div className="relative">
-			<nav className="w-full flex items-center md:justify-end p-10 border-b border-b-secondary dark:border-b-secondary-dark shadow-md shadow-black dark:shadow-white relative">
+			<nav
+				className="w-full flex items-center md:justify-end p-10 bg-primary dark:bg-primary-dark
+                border-b border-b-secondary dark:border-b-secondary-dark
+                shadow-md shadow-black dark:shadow-white relative z-50"
+			>
 				<div className="hamburger-menu space-y-2 md:hidden cursor-pointer" onClick={() => setMenu(!menu)}>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
@@ -27,24 +31,43 @@ function Header() {
 					</div>
 				</div>
 			</nav>
-			{menu && (
-				<>
-					<div className="md:hidden fixed mt-28 inset-0 bg-black bg-opacity-50 z-10" onClick={() => setMenu(false)}></div>
-					<div className="md:hidden menu absolute left-0 right-0 bg-primary dark:bg-primary-dark shadow-md shadow-black dark:shadow-white z-20" style={{ top: "100%" }}>
-						<ul className="flex flex-col">
-							<li>
-								<Link to={"/"} className="block w-full p-4 text-secondary dark:text-secondary-dark" onClick={() => setMenu(false)}>Startsida</Link>
-							</li>
-							<li>
-								<Link to={"/kontakta-oss"} className="block w-full p-4 text-secondary dark:text-secondary-dark" onClick={() => setMenu(false)}>Kontakta oss</Link>
-							</li>
-							<li>
-								<div className="block w-full p-4 text-secondary dark:text-secondary-dark"><ThemeToggle /></div>
-							</li>
-						</ul>
-					</div>
-				</>
-			)}
+			<>
+				<div
+					className={`md:hidden fixed mt-28 inset-0 bg-black z-10 
+                        transition-[opacity] duration-300 
+                        ${menu ? "opacity-50" : "opacity-0"}`}
+					onClick={() => setMenu(false)}
+				></div>
+				<div
+					className={`md:hidden menu absolute left-0 right-0 bg-primary dark:bg-primary-dark
+                        shadow-md shadow-black dark:shadow-white z-20 transition-[top] duration-300
+                        overflow-hidden ${menu ? "top-28" : "top-[-100px]"}`}
+				>
+					<ul className="flex flex-col">
+						<li>
+							<Link
+								to={"/"}
+								className="block w-full p-4 text-secondary dark:text-secondary-dark"
+								onClick={() => setMenu(false)}>
+                                Startsida
+							</Link>
+						</li>
+						<li>
+							<Link
+								to={"/kontakta-oss"}
+								className="block w-full p-4 text-secondary dark:text-secondary-dark"
+								onClick={() => setMenu(false)}>
+                                Kontakta oss
+							</Link>
+						</li>
+						<li>
+							<div className="block w-full p-4 text-secondary dark:text-secondary-dark">
+								<ThemeToggle />
+							</div>
+						</li>
+					</ul>
+				</div>
+			</>
 		</div>
 	);
 }
