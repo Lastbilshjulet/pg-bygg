@@ -1,23 +1,51 @@
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import { useState } from "react";
 
 function Header() {
+	const [menu, setMenu] = useState(false);
+
 	return (
-		<nav className="w-full flex flex-row justify-between p-10 border-b border-b-secondary dark:border-b-secondary-dark shadow-md shadow-black dark:shadow-white">
-			<div className="m-auto">
-				<Link to={"/"}>
-					<h1 className="text-5xl w-full text-secondary dark:text-secondary-dark">P&G Bygg</h1>
-				</Link>
-			</div>
-			<div className="fixed top-14 right-10 flex gap-10">
-				<div className="text-secondary dark:text-secondary-dark pt-1">
-					<Link to={"/kontakta-oss"}>
-                    Kontakta oss
+		<div className="relative">
+			<nav className="w-full flex items-center md:justify-end p-10 border-b border-b-secondary dark:border-b-secondary-dark shadow-md shadow-black dark:shadow-white relative">
+				<div className="hamburger-menu space-y-2 md:hidden cursor-pointer" onClick={() => setMenu(!menu)}>
+					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
+					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
+					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
+				</div>
+				<div className="title absolute left-1/2 transform -translate-x-1/2">
+					<Link to={"/"}>
+						<h1 className="text-2xl md:text-5xl w-full text-secondary dark:text-secondary-dark">P&G Bygg</h1>
 					</Link>
 				</div>
-				<ThemeToggle />
-			</div>
-		</nav>
+				<div className="hidden md:flex flex-row-reverse items-center gap-10">
+					<ThemeToggle />
+					<div className="text-secondary dark:text-secondary-dark pt-1">
+						<Link to={"/kontakta-oss"}>
+                            Kontakta oss
+						</Link>
+					</div>
+				</div>
+			</nav>
+			{menu && (
+				<>
+					<div className="md:hidden fixed mt-28 inset-0 bg-black bg-opacity-50 z-10" onClick={() => setMenu(false)}></div>
+					<div className="md:hidden menu absolute left-0 right-0 bg-primary dark:bg-primary-dark shadow-md shadow-black dark:shadow-white z-20" style={{ top: "100%" }}>
+						<ul className="flex flex-col">
+							<li>
+								<Link to={"/"} className="block w-full p-4 text-secondary dark:text-secondary-dark" onClick={() => setMenu(false)}>Startsida</Link>
+							</li>
+							<li>
+								<Link to={"/kontakta-oss"} className="block w-full p-4 text-secondary dark:text-secondary-dark" onClick={() => setMenu(false)}>Kontakta oss</Link>
+							</li>
+							<li>
+								<div className="block w-full p-4 text-secondary dark:text-secondary-dark"><ThemeToggle /></div>
+							</li>
+						</ul>
+					</div>
+				</>
+			)}
+		</div>
 	);
 }
 
