@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { MdLightMode } from "react-icons/md";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ size }) => {
 	const [theme, setTheme] = useState(() => {
 		const savedTheme = localStorage.getItem("theme");
 		if (savedTheme) {
@@ -30,7 +30,7 @@ const ThemeToggle = () => {
 			onClick={toggleTheme}
 			className="text-secondary dark:text-secondary-dark"
 		>
-			<MdLightMode size={35}/>
+			<MdLightMode size={size}/>
 		</button>
 	);
 };

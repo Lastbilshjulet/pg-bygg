@@ -8,24 +8,26 @@ function Header() {
 	return (
 		<div className="relative">
 			<nav
-				className="w-full flex items-center md:justify-end p-10 bg-primary dark:bg-primary-dark
+				className="w-full flex items-center md:justify-end bg-primary dark:bg-primary-dark
                 border-b border-b-secondary dark:border-b-secondary-dark
                 shadow-md shadow-black dark:shadow-white relative z-50"
 			>
-				<div className="hamburger-menu space-y-2 md:hidden cursor-pointer" onClick={() => setMenu(!menu)}>
+				<div className="hamburger-menu space-y-2 p-5 sm:p-10 md:hidden cursor-pointer" onClick={() => setMenu(!menu)}>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
 				</div>
 				<div className="title absolute left-1/2 transform -translate-x-1/2">
 					<Link to={"/"}>
-						<h1 className="text-2xl md:text-5xl w-full text-secondary dark:text-secondary-dark">P&G Bygg</h1>
+						<h1 className="text-2xl md:text-4xl w-full text-secondary dark:text-secondary-dark">P&G Bygg</h1>
 					</Link>
 				</div>
-				<div className="hidden md:flex flex-row-reverse items-center gap-10">
-					<ThemeToggle />
-					<div className="text-secondary dark:text-secondary-dark pt-1">
-						<Link to={"/kontakta-oss"}>
+				<div className="hidden md:flex flex-row-reverse items-center">
+					<div className="p-10 pl-5">
+					    <ThemeToggle size="35" />
+					</div>
+					<div className="text-nowrap text-secondary dark:text-secondary-dark">
+						<Link to={"/kontakta-oss"} className="p-10 pr-5">
                             Kontakta oss
 						</Link>
 					</div>
@@ -41,7 +43,7 @@ function Header() {
 				<div
 					className={`md:hidden menu absolute left-0 right-0 bg-primary dark:bg-primary-dark
                         shadow-md shadow-black dark:shadow-white z-20 transition-[top] duration-300
-                        overflow-hidden ${menu ? "top-28" : "top-[-100px]"}`}
+                        overflow-hidden ${menu ? "top-16 sm:top-28" : "top-[-200px]"}`}
 				>
 					<ul className="flex flex-col">
 						<li>
@@ -62,7 +64,7 @@ function Header() {
 						</li>
 						<li>
 							<div className="block w-full p-4 text-secondary dark:text-secondary-dark">
-								<ThemeToggle />
+								<ThemeToggle size="25"/>
 							</div>
 						</li>
 					</ul>
