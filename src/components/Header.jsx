@@ -35,9 +35,8 @@ function Header() {
 			</nav>
 			<>
 				<div
-					className={`md:hidden fixed mt-28 inset-0 bg-black z-10 
-                        transition-[opacity] duration-300 
-                        ${menu ? "opacity-50" : "opacity-0"}`}
+					className={`md:hidden fixed mt-28 inset-0 bg-black transition-[opacity] duration-300 
+                        ${menu ? "opacity-50 z-10" : "opacity-0 z-[-10]"}`}
 					onClick={() => setMenu(false)}
 				></div>
 				<div
