@@ -1,12 +1,11 @@
 import Header from "../components/Header";
+import HomeContent from "../components/HomeContent";
 
 function HomePage() {
 	return (
 		<div className="bg-primary dark:bg-primary-dark h-screen">
 			<Header></Header>
-			<p className="text-secondary dark:text-secondary-dark pt-1 text-center">
-                Hej!
-			</p>
+			<HomeContent></HomeContent>
 		</div>
 	);
 }
