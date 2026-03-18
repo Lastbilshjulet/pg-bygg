@@ -11,10 +11,6 @@ const router = createBrowserRouter(
 			path: "/",
 			element: <HomePage />
 		},
-		{
-			path: "/kontakta-oss",
-			element: <ContactPage />
-		}
 	]
 );
 

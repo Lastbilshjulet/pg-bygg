@@ -15,6 +15,10 @@ export default {
 				secondary: {
 					DEFAULT: "#000",
 					dark: "#fff"
+				},
+				ternary: {
+					DEFAULT: "#4a4a4a",
+					dark: "#b3b3b3"
 				}
 			}
 		}

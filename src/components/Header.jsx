@@ -8,11 +8,24 @@ function Header() {
 	return (
 		<div className="relative">
 			<nav
-				className="w-full flex items-center md:justify-end bg-primary dark:bg-primary-dark
+				className="w-full flex items-center justify-center bg-primary dark:bg-primary-dark
                 border-b border-b-secondary dark:border-b-secondary-dark
                 shadow-md shadow-black dark:shadow-white relative z-50"
-			>
-				<div className="hamburger-menu space-y-2 p-5 sm:p-10 md:hidden cursor-pointer" onClick={() => setMenu(!menu)}>
+            >
+                <div className="w-full lg:w-[65%] flex justify-between items-center p-5">
+                    <div>
+                        <img 
+                            src="/logo.jpg" 
+                            alt="P&G Bygg"
+                            className="h-12 md:h-16 w-auto"
+                        />
+                    </div>
+                    <div className="flex gap-10">
+                        <h1 className="text-secondary dark:text-secondary-dark">Kontakta oss</h1>
+					    <ThemeToggle size="25" />
+                    </div>
+                </div>
+				{/* <div className="hamburger-menu space-y-2 p-5 sm:p-10 md:hidden cursor-pointer" onClick={() => setMenu(!menu)}>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
 					<div className="w-8 h-0.5 bg-secondary dark:bg-secondary-dark"></div>
@@ -31,9 +44,9 @@ function Header() {
                             Kontakta oss
 						</Link>
 					</div>
-				</div>
+				</div> */}
 			</nav>
-			<>
+			{/* <>
 				<div
 					className={`md:hidden fixed mt-28 inset-0 bg-black transition-[opacity] duration-300 
                         ${menu ? "opacity-50 z-10" : "opacity-0 z-[-10]"}`}
@@ -68,7 +81,7 @@ function Header() {
 						</li>
 					</ul>
 				</div>
-			</>
+			</> */}
 		</div>
 	);
 }
